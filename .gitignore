@@ -1,0 +1,10 @@
+# Obsidian workspace (user-specific, not shareable)
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.trash/
+
+# OS files
+*.DS_Store
+Thumbs.db
+
+# Track other .obsidian/ config files — they preserve settings that are part of operational state
