@@ -7,6 +7,7 @@ created: 2026-04-25
 updated: 2026-05-22
 updated_by: claude_cowork
 tags: [operations, tasks, planning]
+supersedes: ""
 source: RMM_Master_Task_List_Updated_2026-04-12.xlsx
 related: ["[[the_four_strategic_moats]]", "[[the_competitive_landscape]]", "[[operating_philosophy]]", "[[completion_report_audit_2026_05_22]]", "[[security_audit_findings_2026_05_22]]", "[[launch_readiness_checklist]]"]
 ---

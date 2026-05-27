@@ -4,8 +4,8 @@ domain: system
 type: knowledge
 status: active
 created: 2026-05-26
-updated: 2026-05-26
-updated_by: claude
+updated: 2026-05-27
+updated_by: claude_cowork
 tags: [system, domain-map, architecture]
 supersedes: ""
 related: ["[[metadata-schema]]", "[[index-template]]", "[[decision-log]]"]
@@ -28,10 +28,10 @@ This principle is correct but must be defined per domain. Different domains oper
 ### RMM (Run Mad Maps)
 
 - **Hermes location**: `20-projects/rmm/`
-- **Current vault location**: `rmm/`
-- **Note count**: ~97 notes across 10 subdirectories
-- **Migration complexity**: HIGH
-- **Migration priority**: Migrated in sub-domain batches (see priority order below)
+- **Source vault location**: `rmm/`
+- **Note count**: 95 notes across 9 subdirectories (+ 9 INDEX files)
+- **Migration status**: COMPLETE (2026-05-26)
+- **Migration priority**: Migrated in sub-domain batches (see order below)
 - **Note archetypes**: knowledge, decision, handoff, operations, task
 - **Example units**:
   - One note = one complete system specification (e.g., `runner_performance_score_rps.md`)
@@ -52,10 +52,9 @@ This principle is correct but must be defined per domain. Different domains oper
 ### System (Governance Layer)
 
 - **Hermes location**: `00-system/`
-- **Current vault location**: `_system/`
-- **Note count**: 12 (6 documents + 6 templates)
-- **Migration complexity**: LOW
-- **Migration priority**: First (becomes the Hermes governance layer itself)
+- **Source vault location**: `_system/`
+- **Note count**: 13 governance docs + 6 templates
+- **Migration status**: COMPLETE (2026-05-26)
 - **Note archetypes**: knowledge, template
 - **Example units**:
   - One note = one governance protocol (e.g., `handoff_protocol.md`)
@@ -65,10 +64,9 @@ This principle is correct but must be defined per domain. Different domains oper
 ### Operations (Work Pipeline)
 
 - **Hermes location**: `40-operations/`
-- **Current vault location**: `_work/`
-- **Note count**: 9 handoff briefs + 2 RMM-specific handoffs (in `rmm/_work/_handoffs/`)
-- **Migration complexity**: LOW
-- **Migration priority**: Second (merged into `40-operations/handoffs/`)
+- **Source vault location**: `_work/`
+- **Note count**: 11 handoff briefs (merged from `_work/_handoffs/` and `rmm/_work/_handoffs/`)
+- **Migration status**: COMPLETE (2026-05-26)
 - **Note archetypes**: handoff
 - **Cross-domain dependencies**: Handoffs reference RMM documents.
 
@@ -90,23 +88,25 @@ These directories exist in the current vault but contain zero notes. They repres
 
 ---
 
-## RMM Sub-Domain Migration Priority Order
+## RMM Sub-Domain Migration Record
 
-Since RMM is the only populated content domain, it is migrated in sub-domain batches, smallest and most self-contained first:
+All sub-domains migrated 2026-05-26 in a single session, smallest-first ordering:
 
-| Priority | RMM Sub-Domain | Note Count | Rationale |
-|----------|---------------|------------|-----------|
-| 1 (PoC) | `overview/` | 9 | Brand/identity notes. Self-contained, low risk, validates the full migration process |
-| 2 | `legal/` | 3 | Tiny, completely self-contained, minimal cross-references |
-| 3 | `open_questions/` | 1 | Single note, trivial migration |
-| 4 | `finance/` | 4 | Small, structured, low cross-domain dependency |
-| 5 | `decisions/` | 8 | Self-contained register + sub-documents. Important reference material |
-| 6 | `strategy/` | 13 | Moderate complexity, some cross-domain references to product |
-| 7 | `product/` | 20 | Complex formula specifications, significant cross-references |
-| 8 | `operations/` | 17 | Includes master task list (the operational heartbeat). Needs careful handling |
-| 9 | `codebase/` | 20 | Most complex — detailed technical docs, most recently updated, highest cross-reference density |
+| Order | RMM Sub-Domain | Notes | Status |
+|-------|---------------|-------|--------|
+| 1 (PoC) | `overview/` | 9 | COMPLETE |
+| 2 | `legal/` | 3 | COMPLETE |
+| 3 | `open_questions/` | 1 | COMPLETE |
+| 4 | `finance/` | 4 | COMPLETE |
+| 5 | `decisions/` | 8 | COMPLETE |
+| 6 | `strategy/` | 13 | COMPLETE |
+| 7 | `product/` | 20 | COMPLETE |
+| 8 | `operations/` | 17 | COMPLETE |
+| 9 | `codebase/` | 20 | COMPLETE |
 
-**Special handling notes**:
-- `master_task_list.md` (in `operations/`) is a 275-task living document. Do NOT split. Migrate as a single unit.
-- `website_architecture.md` (in `codebase/`) is a 500+ line technical reference. Do NOT split. Migrate as a single unit.
-- RMM also has its own `_work/_handoffs/` (2 notes) — these merge into `40-operations/handoffs/` during migration.
+**Post-migration notes**:
+- `master_task_list.md` migrated intact as a single unit (275+ tasks)
+- `website_architecture.md` migrated intact (500+ lines)
+- RMM `_work/_handoffs/` (2 notes) merged into `40-operations/handoffs/`
+- Every sub-domain received an INDEX.md with categorized listings
+- Frontmatter health check passed (2026-05-27): 131 notes, 0 critical issues

@@ -1,4 +1,5 @@
 ---
+title: 2026-05-26-claude-hermes-viability-and-phase1
 date: 2026-05-26
 agent: claude_cowork
 domain: system
@@ -7,14 +8,16 @@ status: active
 created: 2026-05-26
 updated: 2026-05-26
 updated_by: claude_cowork
-tags: [session-summary, hermes, phase-1]
+tags: [session-summary, hermes, phase-1, migration]
 supersedes: ""
 related: ["[[decision-log]]", "[[domain-map]]", "[[metadata-schema]]"]
 ---
 
-# Session Summary — Hermes Viability Assessment & Phase 1 Execution
+# Session Summary — Hermes Viability Assessment, Phase 1 & Full RMM Migration
 
 ## What Was Done
+
+### Phase 0 — Vault Audit & Viability Assessment
 
 - Full Obsidian vault audit via MCP: 120 notes, 26 folders, ~758 KB
 - Mapped complete folder structure to two levels deep across all directories
@@ -25,6 +28,9 @@ related: ["[[decision-log]]", "[[domain-map]]", "[[metadata-schema]]"]
 - Compared cold-start document assumptions against actual vault state
 - Produced viability assessment document with specific plan adjustments
 - Identified proof-of-concept domain recommendation (rmm/overview/, 9 notes)
+
+### Phase 1 — Hermes Skeleton & Governance
+
 - Created Hermes directory skeleton at E:\20 - Project Hermes
 - Created all Phase 1 governance documents:
   - metadata-schema.md (adopting existing vault conventions)
@@ -37,6 +43,29 @@ related: ["[[decision-log]]", "[[domain-map]]", "[[metadata-schema]]"]
 - Created 5 agent manifests: claude, chatgpt, claude-code, claude-cowork, brain-manager-gpt
 - Created .gitignore
 - Created README placeholders for all skeleton directories
+- Initialized git repository with initial commit
+
+### Phase 2 — Full RMM Domain Migration
+
+- Migrated all 10 RMM sub-domains (104 notes total) into 20-projects/rmm/:
+  - overview/ (9 notes + INDEX.md)
+  - legal/ (3 notes + INDEX.md)
+  - open_questions/ (1 note + INDEX.md)
+  - finance/ (4 notes + INDEX.md)
+  - decisions/ (8 notes + INDEX.md)
+  - strategy/ (13 notes + INDEX.md)
+  - product/ (20 notes + INDEX.md)
+  - operations/ (17 notes + INDEX.md)
+  - codebase/ (20 notes + INDEX.md)
+- Each sub-domain received an INDEX.md with categorized note listings
+- Frontmatter normalized to Hermes schema across all notes
+
+### Phase 3 — System & Operations Migration
+
+- Migrated _system/ governance docs (6 notes) into 00-system/
+- Migrated _templates/ (6 templates) into 00-system/templates/
+- Migrated _work/_handoffs/ (11 handoff notes) into 40-operations/handoffs/
+- All changes committed in 10 git commits following the governance format
 
 ## Key Findings
 
@@ -50,49 +79,43 @@ related: ["[[decision-log]]", "[[domain-map]]", "[[metadata-schema]]"]
 
 - D-001 through D-008 recorded in decision-log.md (see that file for full details)
 
-## Open Questions
+## Open Questions (Resolved)
 
-1. Git repository: needs to be initialized (Valken to run git init and set up remote)
-2. Legacy vault backup: needs to be created before migration begins (compressed archive with date stamp)
-3. Should existing _system/ templates be migrated into 00-system/ as well, or kept in legacy only?
-4. Obsidian needs to be configured to open E:\20 - Project Hermes as a vault
+1. ~~Git repository~~ — Initialized in-session. Remote not yet configured.
+2. ~~Legacy vault backup~~ — Valken to confirm this was done before migration.
+3. ~~_system/ templates~~ — Migrated into 00-system/templates/.
+4. ~~Obsidian vault~~ — Valken connected E:\20 - Project Hermes as working directory.
 
-## Files Created
+## Git History
 
-- E:\20 - Project Hermes\.gitignore
-- E:\20 - Project Hermes\00-system\README.md
-- E:\20 - Project Hermes\00-system\metadata-schema.md
-- E:\20 - Project Hermes\00-system\domain-map.md
-- E:\20 - Project Hermes\00-system\decision-log.md
-- E:\20 - Project Hermes\00-system\handoff-protocol.md
-- E:\20 - Project Hermes\00-system\git-governance.md
-- E:\20 - Project Hermes\00-system\health-check.md
-- E:\20 - Project Hermes\00-system\index-template.md
-- E:\20 - Project Hermes\10-domains\README.md
-- E:\20 - Project Hermes\20-projects\README.md
-- E:\20 - Project Hermes\30-agents\README.md
-- E:\20 - Project Hermes\30-agents\claude.md
-- E:\20 - Project Hermes\30-agents\chatgpt.md
-- E:\20 - Project Hermes\30-agents\claude-code.md
-- E:\20 - Project Hermes\30-agents\claude-cowork.md
-- E:\20 - Project Hermes\30-agents\brain-manager-gpt.md
-- E:\20 - Project Hermes\40-operations\README.md
-- E:\20 - Project Hermes\40-operations\handoffs\README.md
-- E:\20 - Project Hermes\40-operations\inbox\README.md
-- E:\20 - Project Hermes\40-operations\tasks\README.md
-- E:\20 - Project Hermes\50-skills\README.md
-- E:\20 - Project Hermes\60-automation\README.md
-- E:\20 - Project Hermes\70-telemetry\README.md
-- E:\20 - Project Hermes\80-assets\README.md
-- E:\20 - Project Hermes\90-logs\README.md
-- E:\20 - Project Hermes\90-logs\sessions\README.md
-- E:\20 - Project Hermes\90-logs\retrospectives\README.md
-- E:\20 - Project Hermes\90-logs\sessions\2026-05-26-claude-hermes-viability-and-phase1.md (this file)
+10 commits, all following `[agent:claude-cowork] [domain:X]` format:
+
+1. `2d52f44` — Initialize Hermes skeleton - Phase 1 complete
+2. `29c7256` — Migrate overview subdomain (9 notes + INDEX, PoC)
+3. `4a02bce` — Migrate legal (3), open_questions (1), finance (4)
+4. `54fde07` — Migrate decisions INDEX + strategy (13 notes + INDEX)
+5. `1313957` — Migrate decisions INDEX + strategy + product (20 notes)
+6. `7291363` — Migrate operations subdomain (17 notes + INDEX)
+7. `d7004c8` — Migrate codebase subdomain (20 notes + INDEX)
+8. `95f4db9` — Migrate legacy vault governance docs (6 notes)
+9. `13c3664` — Migrate vault templates (6 templates)
+10. `89be6ab` — Migrate handoff notes (11 notes)
+
+## Stats
+
+- **Total files**: 155 markdown files (excluding .git)
+- **RMM notes**: 104 notes across 9 sub-domains
+- **Governance docs**: 7 (00-system/)
+- **Agent manifests**: 5 (30-agents/)
+- **Handoffs**: 11 (40-operations/handoffs/)
+- **Templates**: 6 (00-system/templates/)
+- **INDEX files**: 9 (one per RMM sub-domain)
 
 ## Next Steps
 
-1. **Valken**: Open E:\20 - Project Hermes as a vault in Obsidian. Verify the skeleton looks and feels right.
-2. **Valken**: Create legacy vault backup (compressed archive with date stamp).
-3. **Valken**: Initialize Git in the Hermes directory (`git init`, create GitHub private repo, initial commit).
-4. **Claude (next session)**: Begin Phase 2 — copy rmm/overview/ (9 notes) into 20-projects/rmm/overview/, normalize frontmatter, create INDEX.md, run validation tests.
-5. **Valken**: Review and confirm the domain-map.md migration priority order before Phase 2 begins.
+1. **Claude (next session)**: Run frontmatter health check — validate all notes against metadata-schema.md
+2. **Claude (next session)**: Update domain-map.md with actual migration status and note counts
+3. **Valken**: Set up GitHub private repo and push Hermes
+4. **Valken**: Open E:\20 - Project Hermes as an Obsidian vault and review structure
+5. **Valken**: Confirm legacy vault backup exists
+6. **Future**: Begin populating 10-domains/, 50-skills/, 60-automation/ as new domains emerge
