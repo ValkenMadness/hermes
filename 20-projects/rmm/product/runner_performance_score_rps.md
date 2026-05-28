@@ -4,9 +4,10 @@ domain: rmm
 type: knowledge
 status: active
 created: 2026-04-21
-updated: 2026-04-23
-updated_by: valken
+updated: 2026-05-27
+updated_by: claude_cowork
 tags: [product, formula, rps, formula-lab]
+retrieval_priority: high
 supersedes: ""
 related: ["[[rps_decisions]]", "[[route_grading_system_v3]]", "[[race_readiness_engine]]", "[[formula_development_history]]", "[[formula_lab_engine_files]]", "[[gps_stream_processor]]"]
 ---

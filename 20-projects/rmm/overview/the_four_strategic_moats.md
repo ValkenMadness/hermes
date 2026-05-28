@@ -4,9 +4,10 @@ domain: rmm
 type: knowledge
 status: active
 created: 2026-04-21
-updated: 2026-04-23
-updated_by: valken
+updated: 2026-05-27
+updated_by: claude_cowork
 tags: [overview, moats, strategy]
+retrieval_priority: high
 supersedes: ""
 related: ["[[the_solution]]", "[[the_product_flywheel]]", "[[data_integrity_and_anti_gaming]]", "[[ip_protection]]", "[[the_competitive_landscape]]", "[[the_fitness_tech_layer]]", "[[the_founder]]"]
 ---

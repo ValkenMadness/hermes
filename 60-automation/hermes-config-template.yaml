@@ -1,0 +1,67 @@
+# ============================================================
+# Hermes Agent — config.yaml template
+# ============================================================
+# Copy this to: C:\Users\user\AppData\Local\hermes\config.yaml
+#   (or on Alienware: ~/.hermes/config.yaml)
+#
+# Decision refs: D-013 (both machines), D-014 (git sync), D-015 (hermes3:8b)
+# Created: 2026-05-28 by claude_cowork
+# ============================================================
+
+# --- LLM Provider: Ollama on Alienware ---
+# Ollama exposes an OpenAI-compatible API at /v1
+# The Alienware must have:
+#   1. OLLAMA_HOST=0.0.0.0 set (so it listens on all interfaces)
+#   2. OLLAMA_CONTEXT_LENGTH=64000 set (Hermes needs 64K+ context)
+#   3. hermes3 model pulled: ollama pull hermes3
+#   4. Firewall rule allowing port 11434 from LAN
+model:
+  default: qwen3:8b
+  provider: custom
+  base_url: http://192.168.8.21:11434/v1
+  context_length: 64000
+
+# --- MCP Servers ---
+# Connect Hermes Agent to the Obsidian vault via MCP
+# The obsidian-mcp package reads the vault directly from the filesystem
+mcp_servers:
+  obsidian:
+    command: "npx"
+    args: ["-y", "obsidian-mcp", "--vault", "E:\\20 - Project Hermes"]
+
+  # Optional: filesystem server for direct file access to the vault
+  # Useful if obsidian-mcp doesn't cover all operations
+  vault_fs:
+    command: "npx"
+    args: ["-y", "@modelcontextprotocol/server-filesystem", "E:\\20 - Project Hermes"]
+    tools:
+      # Safety: exclude destructive operations
+      exclude: [delete_file, move_file]
+
+# --- Terminal Backend ---
+# Local terminal on the machine where Hermes Agent runs
+terminal:
+  backend: local
+
+# --- Context File ---
+# Hermes Agent will auto-read CLAUDE.md if present in the working directory
+# When running from the vault root, it picks up governance rules automatically
+# You can also point to it explicitly:
+# context_files:
+#   - "E:\\20 - Project Hermes\\CLAUDE.md"
+
+# ============================================================
+# ALIENWARE VARIANT
+# ============================================================
+# If running Hermes Agent ON the Alienware (per D-013, both machines):
+# Change these values:
+#
+#   model:
+#     base_url: http://localhost:11434/v1     # Ollama is local now
+#
+#   mcp_servers:
+#     obsidian:
+#       args: ["-y", "obsidian-mcp", "--vault", "C:\\Hermes"]  # or wherever vault clone lives
+#     vault_fs:
+#       args: ["-y", "@modelcontextprotocol/server-filesystem", "C:\\Hermes"]
+# ============================================================

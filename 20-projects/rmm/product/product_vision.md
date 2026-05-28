@@ -4,9 +4,10 @@ domain: rmm
 type: knowledge
 status: active
 created: 2026-04-21
-updated: 2026-04-23
-updated_by: valken
+updated: 2026-05-27
+updated_by: claude_cowork
 tags: [product, vision, platform]
+retrieval_priority: high
 supersedes: ""
 related: ["[[the_solution]]", "[[platform_pages_and_ux]]", "[[platform_architecture_and_tech_stack]]", "[[the_product_flywheel]]"]
 ---

@@ -4,9 +4,10 @@ domain: rmm
 type: design
 status: active
 created: 2026-05-18
-updated: 2026-05-21
+updated: 2026-05-27
 updated_by: claude_cowork
 tags: [design, trail-ecosystem, route-analyzer, poi-manager, trail-library, map, admin]
+retrieval_priority: high
 supersedes: ""
 related: ["[[map_system_overview]]", "[[map_system_markers_and_interactions]]", "[[formula_lab_build_status_overview]]", "[[website_architecture]]", "[[trail_ecosystem_build_phases]]"]
 ---

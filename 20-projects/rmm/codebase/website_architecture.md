@@ -4,9 +4,10 @@ domain: rmm
 type: knowledge
 status: active
 created: 2026-04-21
-updated: 2026-05-22
+updated: 2026-05-27
 updated_by: claude_cowork
 tags: [codebase, website, architecture, tech-stack]
+retrieval_priority: high
 supersedes: ""
 related: ["[[website_component_map]]", "[[website_key_files]]", "[[platform_architecture_and_tech_stack]]", "[[website_build_status_overview]]", "[[map_and_website_architecture]]", "[[map_system_overview]]", "[[website_build_status_issues]]", "[[website_data_flow]]", "[[website_deployment_and_devops]]", "[[website_styling_overview]]"]
 ---

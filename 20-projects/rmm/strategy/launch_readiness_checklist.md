@@ -4,9 +4,10 @@ domain: rmm
 type: knowledge
 status: active
 created: 2026-04-21
-updated: 2026-05-22
+updated: 2026-05-27
 updated_by: claude_cowork
 tags: [strategy, launch, checklist]
+retrieval_priority: high
 supersedes: ""
 related: ["[[phased_build_plan]]", "[[website_build_status_overview]]", "[[website_build_status_issues]]", "[[master_task_list]]", "[[handoff_rps_golive_2026_05_06]]", "[[completion_report_audit_2026_05_22]]", "[[security_audit_findings_2026_05_22]]", "[[ip_protection]]"]
 ---

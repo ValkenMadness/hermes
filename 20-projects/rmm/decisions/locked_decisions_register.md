@@ -4,9 +4,10 @@ domain: rmm
 type: knowledge
 status: active
 created: 2026-04-21
-updated: 2026-04-23
-updated_by: valken
+updated: 2026-05-27
+updated_by: claude_cowork
 tags: [decisions, register, locked]
+retrieval_priority: high
 supersedes: ""
 related: ["[[core_principles]]", "[[data_decisions]]", "[[rps_decisions]]", "[[route_grading_decisions]]", "[[race_readiness_decisions]]", "[[map_and_website_architecture]]", "[[formula_lab_decisions]]", "[[open_questions_master_list]]"]
 ---

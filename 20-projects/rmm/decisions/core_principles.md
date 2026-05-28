@@ -4,9 +4,10 @@ domain: rmm
 type: decision
 status: active
 created: 2026-04-21
-updated: 2026-04-23
-updated_by: valken
+updated: 2026-05-27
+updated_by: claude_cowork
 tags: [decisions, principles, locked]
+retrieval_priority: high
 supersedes: ""
 related: ["[[locked_decisions_register]]", "[[operating_philosophy]]"]
 ---

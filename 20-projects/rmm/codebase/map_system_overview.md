@@ -4,9 +4,10 @@ domain: rmm
 type: knowledge
 status: active
 created: 2026-04-21
-updated: 2026-05-21
+updated: 2026-05-27
 updated_by: claude_cowork
 tags: [codebase, map, mapbox, initialisation, filter-sidebar]
+retrieval_priority: high
 supersedes: ""
 related: ["[[map_system_terrain_layers]]", "[[map_system_markers_and_interactions]]", "[[website_architecture]]", "[[base_map_visual_design]]", "[[map_build_sequence]]", "[[website_key_files]]", "[[poi_system_reference]]"]
 ---

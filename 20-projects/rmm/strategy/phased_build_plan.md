@@ -4,9 +4,10 @@ domain: rmm
 type: knowledge
 status: active
 created: 2026-04-21
-updated: 2026-04-23
-updated_by: valken
+updated: 2026-05-27
+updated_by: claude_cowork
 tags: [strategy, roadmap, build-plan]
+retrieval_priority: high
 supersedes: ""
 related: ["[[launch_readiness_checklist]]", "[[revenue_scenarios]]", "[[website_build_status_overview]]", "[[device_strategy]]", "[[open_questions_master_list]]", "[[the_expansion_path]]"]
 ---

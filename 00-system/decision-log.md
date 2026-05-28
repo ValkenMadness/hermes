@@ -4,8 +4,8 @@ domain: system
 type: knowledge
 status: active
 created: 2026-05-26
-updated: 2026-05-26
-updated_by: claude
+updated: 2026-05-28
+updated_by: claude_cowork
 tags: [system, decisions, governance]
 supersedes: ""
 related: ["[[domain-map]]", "[[metadata-schema]]", "[[handoff-protocol]]", "[[git-governance]]"]
@@ -29,6 +29,13 @@ All architectural and operational decisions recorded here. Entries are append-on
 | 2026-05-26 | D-006 | Hermes root directory: `E:\20 - Project Hermes` | human | Valken selected the location via Cowork folder picker. | approved |
 | 2026-05-26 | D-007 | Five agent manifests created: claude, chatgpt, claude-code, claude-cowork, brain-manager-gpt | claude | Vault audit found Brain Manager GPT and Claude Cowork are active agents in the existing workflow but were missing from the original plan's three manifests. | approved |
 | 2026-05-26 | D-008 | Hermes created as a separate vault (not in-place restructure) with legacy vault backed up | human + claude | Non-destructive approach. Legacy vault stays intact as safety net. Git initializes on the clean Hermes structure from day 1. | approved |
+| 2026-05-27 | D-009 | Agent connection protocol established — each agent gets a specific connection mechanism | claude_cowork | Five agents need five different connection methods (MCP, filesystem, paste, memory sync). Documented in `agent-connection-protocol.md`. | approved |
+| 2026-05-27 | D-010 | CLAUDE.md created in vault root for Claude Code auto-discovery | claude_cowork | Claude Code reads CLAUDE.md automatically. Provides governance rules, writable zones, commit format without manual briefing. | approved |
+| 2026-05-27 | D-011 | ChatGPT session briefing doc created as pasteable context block | claude_cowork | ChatGPT has no filesystem access. A maintained briefing doc in `30-agents/chatgpt-session-briefing.md` gives it Hermes awareness per session. | approved |
+| 2026-05-27 | D-012 | retrieval_priority field activated — 12 high-priority notes tagged | claude_cowork | Cross-reference analysis identified the most-linked notes. Tagged with `retrieval_priority: high` so agents know what to read first within each domain. | approved |
+| 2026-05-28 | D-013 | Hermes Agent runs on both machines — desktop for interactive use, Alienware for gateway/background tasks | human + claude_cowork | Both machines are capable. Desktop is primary workstation, Alienware is always-on. Dual install maximizes availability and capability. | approved |
+| 2026-05-28 | D-014 | Obsidian vault synced via git on both machines (desktop and Alienware) | human + claude_cowork | Git is already initialized on the vault. Both machines clone the repo, push/pull to stay in sync. Most resilient approach with full history on both sides. | approved |
+| 2026-05-28 | D-015 | hermes3:8b selected as the Ollama model for Hermes Agent | human + claude_cowork | Nous Research's model purpose-built for Hermes Agent — optimized for tool use, function calling, and agent behavior. 8B fits Alienware VRAM constraints. | approved |
 
 ---
 
